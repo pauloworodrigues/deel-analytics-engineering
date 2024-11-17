@@ -1,0 +1,24 @@
+name: "deel_project"
+version: "1.0.0"
+
+profile: "deel_project"
+
+model-paths: ["deel_project/models"]
+analysis-paths: ["deel_project/analyses"]
+test-paths: ["deel_project/tests"]  
+seed-paths: ["deel_project/seeds"]
+macro-paths: ["deel_project/macros"]
+snapshot-paths: ["deel_project/snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  deel_project:
+    staging:
+      +schema: staging
+      +materialized: incremental
+    intermediate:
+      +schema: intermediate
+      +materialized: table
