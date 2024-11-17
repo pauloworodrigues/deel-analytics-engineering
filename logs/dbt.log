@@ -1,0 +1,1272 @@
+[0m18:00:21.427163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a5a83b370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a5ab4bcd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a5ab11840>]}
+
+
+============================== 18:00:21.434772 | f8604da0-ffb9-4ddf-a98b-7c643d080be8 ==============================
+[0m18:00:21.434772 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:00:21.436320 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'profiles_dir': '/home/prodrigues/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:00:21.599311 [info ] [MainThread]: dbt version: 1.8.8
+[0m18:00:21.600561 [info ] [MainThread]: python version: 3.10.12
+[0m18:00:21.601560 [info ] [MainThread]: python path: /mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/dbt-env/bin/python3
+[0m18:00:21.602531 [info ] [MainThread]: os info: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m18:00:30.251224 [info ] [MainThread]: Using profiles dir at /home/prodrigues/.dbt
+[0m18:00:30.253237 [info ] [MainThread]: Using profiles.yml file at /home/prodrigues/.dbt/profiles.yml
+[0m18:00:30.255097 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/dbt_project.yml
+[0m18:00:30.369916 [info ] [MainThread]: adapter type: snowflake
+[0m18:00:30.371659 [info ] [MainThread]: adapter version: 1.8.4
+[0m18:00:30.472191 [info ] [MainThread]: Configuration:
+[0m18:00:30.474211 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:00:30.475693 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:00:30.476949 [info ] [MainThread]: Required dependencies:
+[0m18:00:30.478558 [debug] [MainThread]: Executing "git --help"
+[0m18:00:30.500078 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:00:30.501497 [debug] [MainThread]: STDERR: "b''"
+[0m18:00:30.502578 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:00:30.503859 [info ] [MainThread]: Connection:
+[0m18:00:30.504938 [info ] [MainThread]:   account: <your_account_identifier>
+[0m18:00:30.506025 [info ] [MainThread]:   user: analytics_engineer
+[0m18:00:30.506977 [info ] [MainThread]:   database: DEEL_PROJECT_DB
+[0m18:00:30.508612 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m18:00:30.510588 [info ] [MainThread]:   role: transform
+[0m18:00:30.511954 [info ] [MainThread]:   schema: RAW
+[0m18:00:30.513647 [info ] [MainThread]:   authenticator: None
+[0m18:00:30.515061 [info ] [MainThread]:   oauth_client_id: None
+[0m18:00:30.516020 [info ] [MainThread]:   query_tag: None
+[0m18:00:30.517134 [info ] [MainThread]:   client_session_keep_alive: False
+[0m18:00:30.517925 [info ] [MainThread]:   host: None
+[0m18:00:30.518702 [info ] [MainThread]:   port: None
+[0m18:00:30.519623 [info ] [MainThread]:   proxy_host: None
+[0m18:00:30.521966 [info ] [MainThread]:   proxy_port: None
+[0m18:00:30.522945 [info ] [MainThread]:   protocol: None
+[0m18:00:30.524292 [info ] [MainThread]:   connect_retries: 1
+[0m18:00:30.526480 [info ] [MainThread]:   connect_timeout: None
+[0m18:00:30.528306 [info ] [MainThread]:   retry_on_database_errors: False
+[0m18:00:30.529334 [info ] [MainThread]:   retry_all: False
+[0m18:00:30.530235 [info ] [MainThread]:   insecure_mode: False
+[0m18:00:30.531018 [info ] [MainThread]:   reuse_connections: None
+[0m18:00:30.533360 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:00:30.537418 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m18:00:30.538578 [debug] [MainThread]: Using snowflake connection "debug"
+[0m18:00:30.539759 [debug] [MainThread]: On debug: select 1 as id
+[0m18:00:30.540608 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:00:31.705168 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m18:00:31.706453 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m18:00:31.707550 [debug] [MainThread]: On debug: No close available on handle
+[0m18:00:31.708445 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m18:00:31.712607 [info ] [MainThread]: [31m1 check failed:[0m
+[0m18:00:31.713728 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m18:00:31.719043 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 7.411668, "process_user_time": 1.800161, "process_kernel_time": 0.592458, "process_mem_max_rss": "110844", "process_in_blocks": "19832", "process_out_blocks": "8", "command_success": false}
+[0m18:00:31.720305 [debug] [MainThread]: Command `dbt debug` failed at 18:00:31.720168 after 7.41 seconds
+[0m18:00:31.721223 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:00:31.722341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a5a83b370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a57756680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a577559f0>]}
+[0m18:00:31.723479 [debug] [MainThread]: Flushing usage events
+[0m18:02:18.517155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39a317f3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39a2b72bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39a3457eb0>]}
+
+
+============================== 18:02:18.524872 | 414697bc-ade4-46e2-b8ac-012abe7cefd6 ==============================
+[0m18:02:18.524872 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:02:18.526095 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'profiles_dir': '/home/prodrigues/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:02:18.705953 [info ] [MainThread]: dbt version: 1.8.8
+[0m18:02:18.707943 [info ] [MainThread]: python version: 3.10.12
+[0m18:02:18.709519 [info ] [MainThread]: python path: /mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/dbt-env/bin/python3
+[0m18:02:18.711061 [info ] [MainThread]: os info: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35
+[0m18:02:24.583436 [info ] [MainThread]: Using profiles dir at /home/prodrigues/.dbt
+[0m18:02:24.586428 [info ] [MainThread]: Using profiles.yml file at /home/prodrigues/.dbt/profiles.yml
+[0m18:02:24.587963 [info ] [MainThread]: Using dbt_project.yml file at /mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/dbt_project.yml
+[0m18:02:24.597793 [info ] [MainThread]: adapter type: snowflake
+[0m18:02:24.599026 [info ] [MainThread]: adapter version: 1.8.4
+[0m18:02:24.674971 [info ] [MainThread]: Configuration:
+[0m18:02:24.676900 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:02:24.678676 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m18:02:24.679894 [info ] [MainThread]: Required dependencies:
+[0m18:02:24.681700 [debug] [MainThread]: Executing "git --help"
+[0m18:02:24.687266 [debug] [MainThread]: STDOUT: "b"usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:02:24.688447 [debug] [MainThread]: STDERR: "b''"
+[0m18:02:24.689371 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:02:24.690846 [info ] [MainThread]: Connection:
+[0m18:02:24.691991 [info ] [MainThread]:   account: qpcnchq-av71114
+[0m18:02:24.693921 [info ] [MainThread]:   user: analytics_engineer
+[0m18:02:24.695102 [info ] [MainThread]:   database: DEEL_PROJECT_DB
+[0m18:02:24.696711 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m18:02:24.697712 [info ] [MainThread]:   role: transform
+[0m18:02:24.698526 [info ] [MainThread]:   schema: RAW
+[0m18:02:24.699680 [info ] [MainThread]:   authenticator: None
+[0m18:02:24.700540 [info ] [MainThread]:   oauth_client_id: None
+[0m18:02:24.701320 [info ] [MainThread]:   query_tag: None
+[0m18:02:24.702645 [info ] [MainThread]:   client_session_keep_alive: False
+[0m18:02:24.703597 [info ] [MainThread]:   host: None
+[0m18:02:24.704426 [info ] [MainThread]:   port: None
+[0m18:02:24.705361 [info ] [MainThread]:   proxy_host: None
+[0m18:02:24.706372 [info ] [MainThread]:   proxy_port: None
+[0m18:02:24.707333 [info ] [MainThread]:   protocol: None
+[0m18:02:24.708561 [info ] [MainThread]:   connect_retries: 1
+[0m18:02:24.709751 [info ] [MainThread]:   connect_timeout: None
+[0m18:02:24.710639 [info ] [MainThread]:   retry_on_database_errors: False
+[0m18:02:24.711504 [info ] [MainThread]:   retry_all: False
+[0m18:02:24.712409 [info ] [MainThread]:   insecure_mode: False
+[0m18:02:24.713247 [info ] [MainThread]:   reuse_connections: None
+[0m18:02:24.715533 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:02:24.719136 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m18:02:24.720447 [debug] [MainThread]: Using snowflake connection "debug"
+[0m18:02:24.721457 [debug] [MainThread]: On debug: select 1 as id
+[0m18:02:24.723008 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:02:26.289742 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.567 seconds
+[0m18:02:26.293403 [debug] [MainThread]: On debug: Close
+[0m18:02:26.519735 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m18:02:26.521455 [info ] [MainThread]: [32mAll checks passed![0m
+[0m18:02:26.525935 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 8.058572, "process_user_time": 1.863478, "process_kernel_time": 0.640941, "process_mem_max_rss": "115824", "process_in_blocks": "23992", "process_out_blocks": "8"}
+[0m18:02:26.527559 [debug] [MainThread]: Command `dbt debug` succeeded at 18:02:26.527380 after 8.06 seconds
+[0m18:02:26.528711 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m18:02:26.529809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39a317f3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39a06bafb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f39a01d7d60>]}
+[0m18:02:26.530989 [debug] [MainThread]: Flushing usage events
+[0m18:09:35.684277 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51caa733d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51cad57280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51cad57f70>]}
+
+
+============================== 18:09:35.693517 | 111bde56-296b-46d7-b47b-ae90c3f10f15 ==============================
+[0m18:09:35.693517 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:09:35.694818 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select stg_globeplay_chargeback_report', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:09:41.047643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '111bde56-296b-46d7-b47b-ae90c3f10f15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c7c70940>]}
+[0m18:09:41.093694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '111bde56-296b-46d7-b47b-ae90c3f10f15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c7c437f0>]}
+[0m18:09:41.104317 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:09:41.137774 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:09:41.147857 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m18:09:41.149178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '111bde56-296b-46d7-b47b-ae90c3f10f15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c7a3ba90>]}
+[0m18:09:44.640701 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.staging
+- models.deel_project.intermediate
+[0m18:09:44.645398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '111bde56-296b-46d7-b47b-ae90c3f10f15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c793c700>]}
+[0m18:09:44.877086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '111bde56-296b-46d7-b47b-ae90c3f10f15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c78c1540>]}
+[0m18:09:44.878125 [info ] [MainThread]: Found 454 macros
+[0m18:09:44.879237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '111bde56-296b-46d7-b47b-ae90c3f10f15', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c78c0820>]}
+[0m18:09:44.880207 [warn ] [MainThread]: The selection criterion 'stg_globeplay_chargeback_report' does not match any enabled nodes
+[0m18:09:44.881835 [info ] [MainThread]: 
+[0m18:09:44.882753 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:09:44.885804 [debug] [MainThread]: Command end result
+[0m18:09:44.928574 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 9.301361, "process_user_time": 2.58585, "process_kernel_time": 0.748246, "process_mem_max_rss": "113524", "process_in_blocks": "20128", "process_out_blocks": "0"}
+[0m18:09:44.929798 [debug] [MainThread]: Command `dbt run` succeeded at 18:09:44.929666 after 9.30 seconds
+[0m18:09:44.930701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51caa733d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c7c437f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f51c7af1150>]}
+[0m18:09:44.931527 [debug] [MainThread]: Flushing usage events
+[0m18:10:08.110455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692ebc7430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692e5a6c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692ef55810>]}
+
+
+============================== 18:10:08.118280 | 44ccbe06-adcb-417e-9d91-0449735c67bc ==============================
+[0m18:10:08.118280 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:10:08.119472 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'profiles_dir': '/home/prodrigues/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run --select stg_globeplay_chargeback_report.sql', 'send_anonymous_usage_stats': 'True'}
+[0m18:10:14.380668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '44ccbe06-adcb-417e-9d91-0449735c67bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692ea8d1b0>]}
+[0m18:10:14.427442 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '44ccbe06-adcb-417e-9d91-0449735c67bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692d546650>]}
+[0m18:10:14.437754 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:10:14.466272 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:10:18.415335 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:10:18.416444 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:10:18.417751 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.staging
+- models.deel_project.intermediate
+[0m18:10:18.422711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '44ccbe06-adcb-417e-9d91-0449735c67bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692ba43fd0>]}
+[0m18:10:18.873544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '44ccbe06-adcb-417e-9d91-0449735c67bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692b9f9fc0>]}
+[0m18:10:18.875074 [info ] [MainThread]: Found 454 macros
+[0m18:10:18.876730 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '44ccbe06-adcb-417e-9d91-0449735c67bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692b9fae30>]}
+[0m18:10:18.878423 [warn ] [MainThread]: The selection criterion 'stg_globeplay_chargeback_report.sql' does not match any enabled nodes
+[0m18:10:18.880733 [info ] [MainThread]: 
+[0m18:10:18.882542 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:10:18.887111 [debug] [MainThread]: Command end result
+[0m18:10:18.943508 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 10.885899, "process_user_time": 2.02783, "process_kernel_time": 0.695256, "process_mem_max_rss": "112748", "process_in_blocks": "19744", "process_out_blocks": "0"}
+[0m18:10:18.945089 [debug] [MainThread]: Command `dbt run` succeeded at 18:10:18.944920 after 10.89 seconds
+[0m18:10:18.946363 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692ebc7430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692e996b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f692bbfece0>]}
+[0m18:10:18.947488 [debug] [MainThread]: Flushing usage events
+[0m18:11:20.109678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558fc73460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558f668dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558ff57250>]}
+
+
+============================== 18:11:20.124630 | 3c599791-6743-44f7-9aec-3759b5d8c065 ==============================
+[0m18:11:20.124630 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:11:20.130550 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run -s stg_globeplay_chargeback_report.sql', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:11:26.030525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3c599791-6743-44f7-9aec-3759b5d8c065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558ce8bfd0>]}
+[0m18:11:26.076716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3c599791-6743-44f7-9aec-3759b5d8c065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558e4468c0>]}
+[0m18:11:26.097450 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:11:26.132290 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:11:28.640767 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:11:28.641961 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:11:28.643037 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.staging
+- models.deel_project.intermediate
+[0m18:11:28.648015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3c599791-6743-44f7-9aec-3759b5d8c065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558c94bee0>]}
+[0m18:11:29.186662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3c599791-6743-44f7-9aec-3759b5d8c065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558cb09930>]}
+[0m18:11:29.188181 [info ] [MainThread]: Found 454 macros
+[0m18:11:29.189706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3c599791-6743-44f7-9aec-3759b5d8c065', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558cb0bdf0>]}
+[0m18:11:29.191865 [warn ] [MainThread]: The selection criterion 'stg_globeplay_chargeback_report.sql' does not match any enabled nodes
+[0m18:11:29.194324 [info ] [MainThread]: 
+[0m18:11:29.198167 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:11:29.202743 [debug] [MainThread]: Command end result
+[0m18:11:29.269604 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 9.244263, "process_user_time": 2.045271, "process_kernel_time": 0.818108, "process_mem_max_rss": "112948", "process_in_blocks": "19744", "process_out_blocks": "0"}
+[0m18:11:29.271363 [debug] [MainThread]: Command `dbt run` succeeded at 18:11:29.271201 after 9.25 seconds
+[0m18:11:29.272552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558fc73460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558cd1aa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f558cd1bc70>]}
+[0m18:11:29.273655 [debug] [MainThread]: Flushing usage events
+[0m18:11:55.964809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8964333d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb896717280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb896717f70>]}
+
+
+============================== 18:11:55.974943 | 724162ff-c68d-4565-8264-68843759aed7 ==============================
+[0m18:11:55.974943 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:11:55.976290 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select stg_globeplay_chargeback_report.sql', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:12:02.958341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '724162ff-c68d-4565-8264-68843759aed7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb893630940>]}
+[0m18:12:03.009326 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '724162ff-c68d-4565-8264-68843759aed7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8936037f0>]}
+[0m18:12:03.030391 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:12:03.064533 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:12:06.757388 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:12:06.758523 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:12:06.759578 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.intermediate
+- models.deel_project.staging
+[0m18:12:06.765496 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '724162ff-c68d-4565-8264-68843759aed7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb893103f70>]}
+[0m18:12:10.239523 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '724162ff-c68d-4565-8264-68843759aed7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8932b9480>]}
+[0m18:12:10.241499 [info ] [MainThread]: Found 454 macros
+[0m18:12:10.243304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '724162ff-c68d-4565-8264-68843759aed7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8932b8880>]}
+[0m18:12:10.245661 [warn ] [MainThread]: The selection criterion 'stg_globeplay_chargeback_report.sql' does not match any enabled nodes
+[0m18:12:10.248718 [info ] [MainThread]: 
+[0m18:12:10.250647 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:12:10.256886 [debug] [MainThread]: Command end result
+[0m18:12:10.329344 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 11.482027, "process_user_time": 2.08532, "process_kernel_time": 0.941067, "process_mem_max_rss": "112976", "process_in_blocks": "19744", "process_out_blocks": "0"}
+[0m18:12:10.331629 [debug] [MainThread]: Command `dbt run` succeeded at 18:12:10.331452 after 11.48 seconds
+[0m18:12:10.333458 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8964333d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb8936031c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb893600250>]}
+[0m18:12:10.335189 [debug] [MainThread]: Flushing usage events
+[0m18:13:35.269731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9343db430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9346bf7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9346be7a0>]}
+
+
+============================== 18:13:35.277646 | adee37d6-e741-4d88-9d9c-ab6b54fa101b ==============================
+[0m18:13:35.277646 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:13:35.278983 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'profiles_dir': '/home/prodrigues/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt test', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:13:40.576146 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'adee37d6-e741-4d88-9d9c-ab6b54fa101b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd933df4c70>]}
+[0m18:13:40.621782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'adee37d6-e741-4d88-9d9c-ab6b54fa101b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd932f49330>]}
+[0m18:13:40.639771 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:13:40.675827 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:13:43.359472 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:13:43.360540 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:13:43.361542 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.intermediate
+- models.deel_project.staging
+[0m18:13:43.366419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'adee37d6-e741-4d88-9d9c-ab6b54fa101b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9310a7f70>]}
+[0m18:13:43.846709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'adee37d6-e741-4d88-9d9c-ab6b54fa101b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9346fb8b0>]}
+[0m18:13:43.848155 [info ] [MainThread]: Found 454 macros
+[0m18:13:43.849608 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'adee37d6-e741-4d88-9d9c-ab6b54fa101b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9313162f0>]}
+[0m18:13:43.851837 [info ] [MainThread]: 
+[0m18:13:43.853406 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:13:43.857254 [debug] [MainThread]: Command end result
+[0m18:13:43.957769 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 8.740478, "process_user_time": 1.944817, "process_kernel_time": 0.714851, "process_mem_max_rss": "114560", "process_in_blocks": "19744", "process_out_blocks": "0"}
+[0m18:13:43.960254 [debug] [MainThread]: Command `dbt test` succeeded at 18:13:43.960036 after 8.74 seconds
+[0m18:13:43.962525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd9343db430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd93161c9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd932f49330>]}
+[0m18:13:43.964896 [debug] [MainThread]: Flushing usage events
+[0m18:15:58.035330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d6bf6f3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d6c253550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d6c252b60>]}
+
+
+============================== 18:15:58.042905 | db91b164-f864-48a3-aed9-8e99d05f701f ==============================
+[0m18:15:58.042905 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:15:58.044293 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt compile', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:16:04.271672 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'db91b164-f864-48a3-aed9-8e99d05f701f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d6be391b0>]}
+[0m18:16:04.318328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'db91b164-f864-48a3-aed9-8e99d05f701f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d6a747220>]}
+[0m18:16:04.328557 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:16:04.359764 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:16:07.516990 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:16:07.518876 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:16:07.520844 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.intermediate
+- models.deel_project.staging
+[0m18:16:07.529288 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'db91b164-f864-48a3-aed9-8e99d05f701f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d68c3bee0>]}
+[0m18:16:08.022825 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'db91b164-f864-48a3-aed9-8e99d05f701f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d68df3520>]}
+[0m18:16:08.024354 [info ] [MainThread]: Found 454 macros
+[0m18:16:08.025927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'db91b164-f864-48a3-aed9-8e99d05f701f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d68c3a530>]}
+[0m18:16:08.028640 [info ] [MainThread]: 
+[0m18:16:08.030413 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:16:08.034685 [debug] [MainThread]: Command end result
+[0m18:16:08.099414 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 10.117088, "process_user_time": 2.141381, "process_kernel_time": 0.732577, "process_mem_max_rss": "112348", "process_in_blocks": "19744", "process_out_blocks": "0"}
+[0m18:16:08.101298 [debug] [MainThread]: Command `dbt compile` succeeded at 18:16:08.101113 after 10.12 seconds
+[0m18:16:08.102712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d6bf6f3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d6bfff6a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d69001f90>]}
+[0m18:16:08.104301 [debug] [MainThread]: Flushing usage events
+[0m18:20:01.240855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13aedf7400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13af0db7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13af0daa10>]}
+
+
+============================== 18:20:01.248676 | ca6bbf02-3b1e-4d76-8a3f-615e11c02f6b ==============================
+[0m18:20:01.248676 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:20:01.250581 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt compile', 'send_anonymous_usage_stats': 'True'}
+[0m18:20:07.494735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ca6bbf02-3b1e-4d76-8a3f-615e11c02f6b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13ae813b20>]}
+[0m18:20:07.540378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ca6bbf02-3b1e-4d76-8a3f-615e11c02f6b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13af116950>]}
+[0m18:20:07.550422 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:20:07.580726 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:20:10.222117 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:20:10.223280 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:20:10.224318 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.staging
+- models.deel_project.intermediate
+[0m18:20:10.229118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ca6bbf02-3b1e-4d76-8a3f-615e11c02f6b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13abac3f70>]}
+[0m18:20:10.640947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ca6bbf02-3b1e-4d76-8a3f-615e11c02f6b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13abc7b910>]}
+[0m18:20:10.642489 [info ] [MainThread]: Found 454 macros
+[0m18:20:10.644238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ca6bbf02-3b1e-4d76-8a3f-615e11c02f6b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13abac24a0>]}
+[0m18:20:10.646805 [info ] [MainThread]: 
+[0m18:20:10.649588 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m18:20:10.653567 [debug] [MainThread]: Command end result
+[0m18:20:10.742931 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 9.557561, "process_user_time": 1.917901, "process_kernel_time": 0.818879, "process_mem_max_rss": "113096", "process_in_blocks": "19744", "process_out_blocks": "0"}
+[0m18:20:10.749123 [debug] [MainThread]: Command `dbt compile` succeeded at 18:20:10.748979 after 9.56 seconds
+[0m18:20:10.750498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13aedf7400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13aebced70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f13abea62c0>]}
+[0m18:20:10.758556 [debug] [MainThread]: Flushing usage events
+[0m18:24:33.900906 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023d533460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023d815e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023d8177f0>]}
+
+
+============================== 18:24:33.909006 | e0356db3-52a3-44db-a538-fc5b18d1ee7a ==============================
+[0m18:24:33.909006 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:24:33.910626 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'debug': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt compile', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:24:39.903570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023d3fd1b0>]}
+[0m18:24:39.952330 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023c0dae90>]}
+[0m18:24:39.961843 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:24:39.993045 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:24:40.047712 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m18:24:40.049322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023c6bc9a0>]}
+[0m18:24:43.729419 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m18:24:43.731298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023a20bd00>]}
+[0m18:24:43.972814 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.deel_project.intermediate
+[0m18:24:43.986697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0239f3cd00>]}
+[0m18:24:44.271185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0239f797e0>]}
+[0m18:24:44.272292 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:24:44.273501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0239f76b00>]}
+[0m18:24:44.275922 [info ] [MainThread]: 
+[0m18:24:44.277510 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:24:44.278997 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:24:44.295155 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:24:44.296672 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:24:44.298324 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:24:45.673471 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01b87084-0000-bf74-0000-71f10001a362
+[0m18:24:45.675408 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m18:24:45.677076 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m18:24:45.679065 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m18:24:45.680480 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:24:45.997735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e0356db3-52a3-44db-a538-fc5b18d1ee7a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0239f3f610>]}
+[0m18:24:46.003405 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:24:46.007024 [info ] [MainThread]: 
+[0m18:24:46.027458 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:24:46.031878 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globeplay_chargeback_report)
+[0m18:24:46.035457 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globeplay_chargeback_report
+[0m18:24:46.049159 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:24:46.093269 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globeplay_chargeback_report
+[0m18:24:46.095422 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:24:46.097442 [debug] [Thread-3 (]: Began running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:24:46.097835 [debug] [Thread-4 (]: Began running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:24:46.098969 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc'
+[0m18:24:46.100459 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888'
+[0m18:24:46.101766 [debug] [Thread-3 (]: Began compiling node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:24:46.103178 [debug] [Thread-4 (]: Began compiling node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:24:46.113637 [debug] [Thread-3 (]: Writing injected SQL for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:24:46.119979 [debug] [Thread-4 (]: Writing injected SQL for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:24:46.138542 [debug] [Thread-3 (]: Began executing node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:24:46.141444 [debug] [Thread-3 (]: Finished running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:24:46.143387 [debug] [Thread-4 (]: Began executing node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:24:46.145082 [debug] [Thread-4 (]: Finished running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:24:46.147171 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:24:46.148167 [debug] [MainThread]: Connection 'model.deel_project.stg_globeplay_chargeback_report' was properly closed.
+[0m18:24:46.149067 [debug] [MainThread]: Connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc' was properly closed.
+[0m18:24:46.150080 [debug] [MainThread]: Connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888' was properly closed.
+[0m18:24:46.151703 [debug] [MainThread]: Command end result
+[0m18:24:46.255221 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 12.408256, "process_user_time": 3.353268, "process_kernel_time": 0.841158, "process_mem_max_rss": "130584", "process_in_blocks": "22896", "process_out_blocks": "8"}
+[0m18:24:46.256486 [debug] [MainThread]: Command `dbt compile` succeeded at 18:24:46.256349 after 12.41 seconds
+[0m18:24:46.257911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023d533460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0239f76a40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f023d3fd1b0>]}
+[0m18:24:46.259254 [debug] [MainThread]: Flushing usage events
+[0m18:25:48.186911 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9202df430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9205b7d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9205b5b70>]}
+
+
+============================== 18:25:48.203992 | 0c1c900b-c92b-4636-9bc1-4a6cf0814bb0 ==============================
+[0m18:25:48.203992 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:25:48.205488 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt compile', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:25:56.202581 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0c1c900b-c92b-4636-9bc1-4a6cf0814bb0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc91d4e4370>]}
+[0m18:25:56.256051 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0c1c900b-c92b-4636-9bc1-4a6cf0814bb0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc91d4e5840>]}
+[0m18:25:56.284312 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:25:56.331718 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:26:00.505739 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:26:00.508742 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:26:00.518315 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.deel_project.intermediate
+[0m18:26:00.560051 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0c1c900b-c92b-4636-9bc1-4a6cf0814bb0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc91d004280>]}
+[0m18:26:01.052611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0c1c900b-c92b-4636-9bc1-4a6cf0814bb0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9205f20b0>]}
+[0m18:26:01.054332 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:26:01.055543 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0c1c900b-c92b-4636-9bc1-4a6cf0814bb0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc91d0041c0>]}
+[0m18:26:01.058179 [info ] [MainThread]: 
+[0m18:26:01.059734 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:26:01.061498 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:26:01.077464 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:26:01.079273 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:26:01.080632 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:26:02.329437 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01b87086-0000-bf74-0000-71f10001a36a
+[0m18:26:02.331094 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m18:26:02.332632 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m18:26:02.334556 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m18:26:02.336155 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:26:02.542771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0c1c900b-c92b-4636-9bc1-4a6cf0814bb0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc91ec38820>]}
+[0m18:26:02.546476 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:26:02.549514 [info ] [MainThread]: 
+[0m18:26:02.556567 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:02.559851 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globeplay_chargeback_report)
+[0m18:26:02.562508 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:02.574816 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:26:02.596107 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:02.598299 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:02.600604 [debug] [Thread-3 (]: Began running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:02.601105 [debug] [Thread-4 (]: Began running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:02.602163 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc'
+[0m18:26:02.604251 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888'
+[0m18:26:02.605381 [debug] [Thread-3 (]: Began compiling node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:02.606550 [debug] [Thread-4 (]: Began compiling node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:02.621064 [debug] [Thread-3 (]: Writing injected SQL for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:26:02.627278 [debug] [Thread-4 (]: Writing injected SQL for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:26:02.634748 [debug] [Thread-4 (]: Began executing node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:02.636876 [debug] [Thread-4 (]: Finished running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:02.639323 [debug] [Thread-3 (]: Began executing node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:02.641061 [debug] [Thread-3 (]: Finished running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:02.643188 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:26:02.644211 [debug] [MainThread]: Connection 'model.deel_project.stg_globeplay_chargeback_report' was properly closed.
+[0m18:26:02.645018 [debug] [MainThread]: Connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc' was properly closed.
+[0m18:26:02.645880 [debug] [MainThread]: Connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888' was properly closed.
+[0m18:26:02.647256 [debug] [MainThread]: Command end result
+[0m18:26:02.707438 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 14.583685, "process_user_time": 2.685027, "process_kernel_time": 1.153895, "process_mem_max_rss": "124152", "process_in_blocks": "22496", "process_out_blocks": "8"}
+[0m18:26:02.708969 [debug] [MainThread]: Command `dbt compile` succeeded at 18:26:02.708818 after 14.59 seconds
+[0m18:26:02.710366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9202df430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc91f461690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc9205f20e0>]}
+[0m18:26:02.711825 [debug] [MainThread]: Flushing usage events
+[0m18:26:27.459875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842e01f3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842e2f7370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842e2f5a50>]}
+
+
+============================== 18:26:27.467746 | d293a8c8-bdf3-4de3-8ccd-8efb76753237 ==============================
+[0m18:26:27.467746 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:26:27.468957 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt compile', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:26:33.038790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842da38d30>]}
+[0m18:26:33.084555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842b227700>]}
+[0m18:26:33.095142 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:26:33.134173 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:26:33.235307 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m18:26:33.237396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842d1a0970>]}
+[0m18:26:37.313699 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m18:26:37.317352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842af8a470>]}
+[0m18:26:37.540543 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.deel_project.intermediate
+[0m18:26:37.552013 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842aa28fd0>]}
+[0m18:26:37.931556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842aa07700>]}
+[0m18:26:37.933636 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:26:37.934759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842aa2af80>]}
+[0m18:26:37.936713 [info ] [MainThread]: 
+[0m18:26:37.938119 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:26:37.939668 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:26:37.952103 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:26:37.955257 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:26:37.957013 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:26:39.398873 [debug] [ThreadPool]: Snowflake adapter: Snowflake query id: 01b87086-0000-bf7c-0000-71f10001b50e
+[0m18:26:39.399982 [debug] [ThreadPool]: Snowflake adapter: Snowflake error: 002043 (02000): SQL compilation error:
+Object does not exist, or operation cannot be performed.
+[0m18:26:39.401009 [debug] [ThreadPool]: Snowflake adapter: Error running SQL: macro list_relations_without_caching
+[0m18:26:39.401803 [debug] [ThreadPool]: Snowflake adapter: Rolling back transaction.
+[0m18:26:39.402613 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:26:39.608086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd293a8c8-bdf3-4de3-8ccd-8efb76753237', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842aa04790>]}
+[0m18:26:39.610505 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:26:39.612578 [info ] [MainThread]: 
+[0m18:26:39.617797 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:39.619547 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globeplay_chargeback_report)
+[0m18:26:39.621190 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:39.629310 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:26:39.647540 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:39.649848 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:26:39.652229 [debug] [Thread-3 (]: Began running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:39.652701 [debug] [Thread-4 (]: Began running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:39.653681 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc'
+[0m18:26:39.655149 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888'
+[0m18:26:39.656859 [debug] [Thread-3 (]: Began compiling node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:39.658307 [debug] [Thread-4 (]: Began compiling node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:39.669398 [debug] [Thread-3 (]: Writing injected SQL for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:26:39.675629 [debug] [Thread-4 (]: Writing injected SQL for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:26:39.687665 [debug] [Thread-4 (]: Began executing node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:39.688663 [debug] [Thread-3 (]: Began executing node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:39.690001 [debug] [Thread-4 (]: Finished running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:26:39.691966 [debug] [Thread-3 (]: Finished running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:26:39.695178 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:26:39.696164 [debug] [MainThread]: Connection 'model.deel_project.stg_globeplay_chargeback_report' was properly closed.
+[0m18:26:39.697195 [debug] [MainThread]: Connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc' was properly closed.
+[0m18:26:39.698256 [debug] [MainThread]: Connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888' was properly closed.
+[0m18:26:39.699667 [debug] [MainThread]: Command end result
+[0m18:26:39.758923 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 12.351869, "process_user_time": 3.288053, "process_kernel_time": 0.824877, "process_mem_max_rss": "129408", "process_in_blocks": "22584", "process_out_blocks": "8"}
+[0m18:26:39.760253 [debug] [MainThread]: Command `dbt compile` succeeded at 18:26:39.760128 after 12.35 seconds
+[0m18:26:39.761313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842e01f3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842de3e470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f842d1da650>]}
+[0m18:26:39.762494 [debug] [MainThread]: Flushing usage events
+[0m18:34:04.205224 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8155893430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f815528ac50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8155b75810>]}
+
+
+============================== 18:34:04.213560 | e9b93190-4625-4620-acba-8a1566e86206 ==============================
+[0m18:34:04.213560 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:34:04.214524 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run --select stg_globeplay_chargeback_report', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:34:10.156718 [error] [MainThread]: Encountered an error:
+Runtime Error
+  at path []: Additional properties are not allowed ('data-test-paths' was unexpected)
+
+Error encountered in /mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/dbt_project.yml
+[0m18:34:10.163788 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 6.008765, "process_user_time": 1.829249, "process_kernel_time": 0.626119, "process_mem_max_rss": "107584", "process_in_blocks": "19744", "command_success": false, "process_out_blocks": "0"}
+[0m18:34:10.165412 [debug] [MainThread]: Command `dbt run` failed at 18:34:10.165297 after 6.01 seconds
+[0m18:34:10.166539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8155893430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8155bb2770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8152a925f0>]}
+[0m18:34:10.168018 [debug] [MainThread]: Flushing usage events
+[0m18:35:04.108082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa73001b460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72f9f8dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa7303ab250>]}
+
+
+============================== 18:35:04.126707 | 6c03851b-50d7-4f56-b3b3-3f707573a415 ==============================
+[0m18:35:04.126707 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:35:04.128788 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run --select stg_globeplay_chargeback_report', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:35:14.779784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72d1cbfd0>]}
+[0m18:35:14.830944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72d1c9840>]}
+[0m18:35:15.131967 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:35:15.310102 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:35:15.456536 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m18:35:15.459940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72f3689a0>]}
+[0m18:35:20.746823 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m18:35:20.748425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72cf67790>]}
+[0m18:35:20.980532 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72cbad090>]}
+[0m18:35:21.435412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72cb91cf0>]}
+[0m18:35:21.436445 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:35:21.437530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72cb90ca0>]}
+[0m18:35:21.439193 [info ] [MainThread]: 
+[0m18:35:21.440310 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:35:21.441925 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB'
+[0m18:35:21.452832 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB"
+[0m18:35:21.453808 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB"} */
+show terse schemas in database DEEL_PROJECT_DB
+    limit 10000
+[0m18:35:21.455950 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:35:22.751785 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.296 seconds
+[0m18:35:22.754151 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: Close
+[0m18:35:22.948776 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB, now create_DEEL_PROJECT_DB_RAW_staging)
+[0m18:35:22.950815 [debug] [ThreadPool]: Creating schema "database: "DEEL_PROJECT_DB"
+schema: "RAW_staging"
+"
+[0m18:35:22.956863 [debug] [ThreadPool]: Using snowflake connection "create_DEEL_PROJECT_DB_RAW_staging"
+[0m18:35:22.958536 [debug] [ThreadPool]: On create_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "create_DEEL_PROJECT_DB_RAW_staging"} */
+create schema if not exists DEEL_PROJECT_DB.RAW_staging
+[0m18:35:22.960409 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:35:23.744867 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.784 seconds
+[0m18:35:23.749272 [debug] [ThreadPool]: On create_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:35:23.963588 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_DEEL_PROJECT_DB_RAW_staging, now list_DEEL_PROJECT_DB_RAW_staging)
+[0m18:35:23.978655 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:35:23.981694 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:35:23.984339 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:35:24.633909 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.649 seconds
+[0m18:35:24.639329 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:35:24.863721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72caec9a0>]}
+[0m18:35:24.867934 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:35:24.870609 [info ] [MainThread]: 
+[0m18:35:24.878893 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:35:24.882220 [info ] [Thread-1 (]: 1 of 1 START sql incremental model RAW_staging.stg_globeplay_chargeback_report . [RUN]
+[0m18:35:24.885165 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globeplay_chargeback_report)
+[0m18:35:24.887468 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globeplay_chargeback_report
+[0m18:35:24.902742 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:35:24.924877 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globeplay_chargeback_report
+[0m18:35:24.978391 [debug] [Thread-1 (]: Writing runtime sql for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:35:24.996052 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:35:24.996934 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+create or replace transient table DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report
+         as
+        (
+
+SELECT 
+    external_ref,
+    status,
+    source,
+    chargeback
+FROM DEEL_PROJECT_DB.raw.raw_globepay_chargeback_report
+
+
+        );
+[0m18:35:24.997873 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:35:26.745726 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.748 seconds
+[0m18:35:26.760893 [debug] [Thread-1 (]: Applying DROP to: DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp
+[0m18:35:26.768624 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:35:26.770488 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+drop view if exists DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp cascade
+[0m18:35:26.901784 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.129 seconds
+[0m18:35:26.930529 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: Close
+[0m18:35:27.135820 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6c03851b-50d7-4f56-b3b3-3f707573a415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72d18a8c0>]}
+[0m18:35:27.139198 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model RAW_staging.stg_globeplay_chargeback_report  [[32mSUCCESS 1[0m in 2.25s]
+[0m18:35:27.142248 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:35:27.146643 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:35:27.148743 [debug] [MainThread]: Connection 'model.deel_project.stg_globeplay_chargeback_report' was properly closed.
+[0m18:35:27.151592 [info ] [MainThread]: 
+[0m18:35:27.154947 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 5.71 seconds (5.71s).
+[0m18:35:27.160911 [debug] [MainThread]: Command end result
+[0m18:35:27.305106 [info ] [MainThread]: 
+[0m18:35:27.307695 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:35:27.310043 [info ] [MainThread]: 
+[0m18:35:27.312625 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:35:27.348605 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 23.305119, "process_user_time": 3.819369, "process_kernel_time": 0.838936, "process_mem_max_rss": "129692", "process_in_blocks": "22584", "process_out_blocks": "8"}
+[0m18:35:27.431942 [debug] [MainThread]: Command `dbt run` succeeded at 18:35:27.431763 after 23.39 seconds
+[0m18:35:27.436744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa73001b460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72f3696c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa72cbfed40>]}
+[0m18:35:27.442670 [debug] [MainThread]: Flushing usage events
+[0m18:36:25.519756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913fb5f460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913f53cdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913feef250>]}
+
+
+============================== 18:36:25.527264 | d2a5dd85-e0c4-4da3-9659-e65e975d99ae ==============================
+[0m18:36:25.527264 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:36:25.528500 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'profiles_dir': '/home/prodrigues/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt test --select stg_globeplay_chargeback_report', 'send_anonymous_usage_stats': 'True'}
+[0m18:36:31.769899 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd2a5dd85-e0c4-4da3-9659-e65e975d99ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913cd0ffd0>]}
+[0m18:36:31.830875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd2a5dd85-e0c4-4da3-9659-e65e975d99ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913cd0d840>]}
+[0m18:36:31.845490 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:36:31.879443 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:36:35.207271 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:36:35.209030 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:36:35.254432 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd2a5dd85-e0c4-4da3-9659-e65e975d99ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913ca1c2e0>]}
+[0m18:36:35.589385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd2a5dd85-e0c4-4da3-9659-e65e975d99ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913c838760>]}
+[0m18:36:35.590481 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:36:35.591556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd2a5dd85-e0c4-4da3-9659-e65e975d99ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913ca1c640>]}
+[0m18:36:35.593300 [info ] [MainThread]: 
+[0m18:36:35.594504 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:36:35.595937 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:36:35.610857 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:36:35.612000 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:36:35.614295 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:36:36.647248 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.033 seconds
+[0m18:36:36.655056 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:36:36.876846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd2a5dd85-e0c4-4da3-9659-e65e975d99ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913fcd3070>]}
+[0m18:36:36.880109 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:36:36.883018 [info ] [MainThread]: 
+[0m18:36:36.889326 [debug] [Thread-1 (]: Began running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:36:36.890261 [debug] [Thread-2 (]: Began running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:36:36.891925 [info ] [Thread-1 (]: 1 of 2 START test not_null_stg_globeplay_chargeback_report_external_ref ........ [RUN]
+[0m18:36:36.897092 [info ] [Thread-2 (]: 2 of 2 START test unique_stg_globeplay_chargeback_report_external_ref .......... [RUN]
+[0m18:36:36.901391 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc)
+[0m18:36:36.904916 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888'
+[0m18:36:36.906808 [debug] [Thread-1 (]: Began compiling node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:36:36.908512 [debug] [Thread-2 (]: Began compiling node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:36:36.924383 [debug] [Thread-1 (]: Writing injected SQL for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:36:36.930021 [debug] [Thread-2 (]: Writing injected SQL for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:36:36.936877 [debug] [Thread-2 (]: Began executing node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:36:36.945056 [debug] [Thread-1 (]: Began executing node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:36:36.954852 [debug] [Thread-2 (]: Writing runtime sql for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:36:36.958456 [debug] [Thread-1 (]: Writing runtime sql for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:36:36.970207 [debug] [Thread-2 (]: Using snowflake connection "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:36:36.971686 [debug] [Thread-2 (]: On test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    external_ref as unique_field,
+    count(*) as n_records
+
+from DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report
+where external_ref is not null
+group by external_ref
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:36:36.972627 [debug] [Thread-1 (]: Using snowflake connection "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:36:36.973222 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:36:36.974178 [debug] [Thread-1 (]: On test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select external_ref
+from DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report
+where external_ref is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:36:36.976979 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:36:37.929441 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.956 seconds
+[0m18:36:37.947139 [debug] [Thread-2 (]: On test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888: Close
+[0m18:36:38.061480 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.084 seconds
+[0m18:36:38.066094 [debug] [Thread-1 (]: On test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc: Close
+[0m18:36:38.159143 [info ] [Thread-2 (]: 2 of 2 PASS unique_stg_globeplay_chargeback_report_external_ref ................ [[32mPASS[0m in 1.25s]
+[0m18:36:38.162054 [debug] [Thread-2 (]: Finished running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:36:38.292111 [info ] [Thread-1 (]: 1 of 2 PASS not_null_stg_globeplay_chargeback_report_external_ref .............. [[32mPASS[0m in 1.39s]
+[0m18:36:38.295599 [debug] [Thread-1 (]: Finished running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:36:38.300799 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:36:38.303518 [debug] [MainThread]: Connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc' was properly closed.
+[0m18:36:38.306820 [debug] [MainThread]: Connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888' was properly closed.
+[0m18:36:38.309533 [info ] [MainThread]: 
+[0m18:36:38.311581 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 2.72 seconds (2.72s).
+[0m18:36:38.313847 [debug] [MainThread]: Command end result
+[0m18:36:38.377531 [info ] [MainThread]: 
+[0m18:36:38.378836 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:36:38.380047 [info ] [MainThread]: 
+[0m18:36:38.381410 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m18:36:38.384531 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 12.912086, "process_user_time": 2.54297, "process_kernel_time": 0.811586, "process_mem_max_rss": "126032", "process_in_blocks": "22696", "process_out_blocks": "8"}
+[0m18:36:38.385836 [debug] [MainThread]: Command `dbt test` succeeded at 18:36:38.385739 after 12.91 seconds
+[0m18:36:38.387091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913fb5f460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913bb84d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f913ecde7d0>]}
+[0m18:36:38.399307 [debug] [MainThread]: Flushing usage events
+[0m18:38:33.985578 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac5507400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac57e9e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac57ebca0>]}
+
+
+============================== 18:38:33.993131 | 15b62bb0-04e1-4d22-acc1-469fe707869d ==============================
+[0m18:38:33.993131 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:38:33.994426 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'fail_fast': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt test --select stg_globeplay_chargeback_report', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:38:39.335788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac3cdf3a0>]}
+[0m18:38:39.381668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac2705810>]}
+[0m18:38:39.391477 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:38:39.427618 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:38:39.525438 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m18:38:39.527185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac46909a0>]}
+[0m18:38:43.738332 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m18:38:43.759322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac252cc40>]}
+[0m18:38:43.981347 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.intermediate
+- models.deel_project.raw
+[0m18:38:43.991419 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac1f11030>]}
+[0m18:38:44.497335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac247bdf0>]}
+[0m18:38:44.498836 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:38:44.500687 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac1f122f0>]}
+[0m18:38:44.505475 [info ] [MainThread]: 
+[0m18:38:44.508352 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:38:44.511277 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:38:44.534234 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:38:44.537252 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:38:44.539613 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:38:45.512404 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.973 seconds
+[0m18:38:45.516895 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:38:45.747581 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '15b62bb0-04e1-4d22-acc1-469fe707869d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac224cac0>]}
+[0m18:38:45.749852 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:38:45.751726 [info ] [MainThread]: 
+[0m18:38:45.759671 [debug] [Thread-1 (]: Began running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:38:45.760264 [debug] [Thread-2 (]: Began running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:38:45.761750 [info ] [Thread-1 (]: 1 of 2 START test not_null_stg_globeplay_chargeback_report_external_ref ........ [RUN]
+[0m18:38:45.763063 [info ] [Thread-2 (]: 2 of 2 START test unique_stg_globeplay_chargeback_report_external_ref .......... [RUN]
+[0m18:38:45.765772 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc)
+[0m18:38:45.768180 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888'
+[0m18:38:45.770107 [debug] [Thread-1 (]: Began compiling node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:38:45.771226 [debug] [Thread-2 (]: Began compiling node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:38:45.787389 [debug] [Thread-1 (]: Writing injected SQL for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:38:45.793046 [debug] [Thread-2 (]: Writing injected SQL for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:38:45.805168 [debug] [Thread-2 (]: Began executing node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:38:45.806724 [debug] [Thread-1 (]: Began executing node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:38:45.822954 [debug] [Thread-2 (]: Writing runtime sql for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:38:45.825846 [debug] [Thread-1 (]: Writing runtime sql for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:38:45.839845 [debug] [Thread-2 (]: Using snowflake connection "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:38:45.841336 [debug] [Thread-2 (]: On test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    external_ref as unique_field,
+    count(*) as n_records
+
+from DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report
+where external_ref is not null
+group by external_ref
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:38:45.841929 [debug] [Thread-1 (]: Using snowflake connection "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:38:45.843014 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:38:45.844564 [debug] [Thread-1 (]: On test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select external_ref
+from DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report
+where external_ref is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:38:45.848317 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:38:46.403011 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.555 seconds
+[0m18:38:46.430694 [debug] [Thread-1 (]: On test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc: Close
+[0m18:38:46.626601 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.784 seconds
+[0m18:38:46.630056 [debug] [Thread-2 (]: On test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888: Close
+[0m18:38:46.642452 [info ] [Thread-1 (]: 1 of 2 PASS not_null_stg_globeplay_chargeback_report_external_ref .............. [[32mPASS[0m in 0.88s]
+[0m18:38:46.644412 [debug] [Thread-1 (]: Finished running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:38:46.826173 [info ] [Thread-2 (]: 2 of 2 PASS unique_stg_globeplay_chargeback_report_external_ref ................ [[32mPASS[0m in 1.06s]
+[0m18:38:46.830199 [debug] [Thread-2 (]: Finished running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:38:46.835505 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:38:46.837806 [debug] [MainThread]: Connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc' was properly closed.
+[0m18:38:46.839863 [debug] [MainThread]: Connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888' was properly closed.
+[0m18:38:46.843808 [info ] [MainThread]: 
+[0m18:38:46.848206 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 2.34 seconds (2.34s).
+[0m18:38:46.852019 [debug] [MainThread]: Command end result
+[0m18:38:46.916309 [info ] [MainThread]: 
+[0m18:38:46.917918 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:38:46.919025 [info ] [MainThread]: 
+[0m18:38:46.920136 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m18:38:46.922744 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 12.986265, "process_user_time": 3.49182, "process_kernel_time": 0.707066, "process_mem_max_rss": "132876", "process_in_blocks": "22784", "process_out_blocks": "8"}
+[0m18:38:46.923866 [debug] [MainThread]: Command `dbt test` succeeded at 18:38:46.923767 after 12.99 seconds
+[0m18:38:46.924870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac5507400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac3cdf3a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8ac46c2740>]}
+[0m18:38:46.925860 [debug] [MainThread]: Flushing usage events
+[0m18:39:09.753113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90be73f3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bea23370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bea21b70>]}
+
+
+============================== 18:39:09.774885 | 54cc372c-d30a-49ef-8406-c597b1243641 ==============================
+[0m18:39:09.774885 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:39:09.776251 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'version_check': 'True', 'profiles_dir': '/home/prodrigues/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:39:21.335973 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '54cc372c-d30a-49ef-8406-c597b1243641', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90be15cd30>]}
+[0m18:39:21.388086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '54cc372c-d30a-49ef-8406-c597b1243641', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bb93f700>]}
+[0m18:39:21.403806 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:39:21.434648 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:39:25.159783 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:39:25.161405 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:39:25.168662 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.deel_project.raw
+- models.deel_project.intermediate
+[0m18:39:25.210189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '54cc372c-d30a-49ef-8406-c597b1243641', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bb458220>]}
+[0m18:39:25.644454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '54cc372c-d30a-49ef-8406-c597b1243641', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bea5d600>]}
+[0m18:39:25.646358 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:39:25.648110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '54cc372c-d30a-49ef-8406-c597b1243641', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bea5f490>]}
+[0m18:39:25.651359 [info ] [MainThread]: 
+[0m18:39:25.658836 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:39:25.661747 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB'
+[0m18:39:25.676611 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB"
+[0m18:39:25.678573 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB"} */
+show terse schemas in database DEEL_PROJECT_DB
+    limit 10000
+[0m18:39:25.680471 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:39:26.747136 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.067 seconds
+[0m18:39:26.752036 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: Close
+[0m18:39:26.974453 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:39:26.989910 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:39:26.992482 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:39:26.994919 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:39:27.780936 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.786 seconds
+[0m18:39:27.785670 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:39:28.000530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '54cc372c-d30a-49ef-8406-c597b1243641', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bb5eacb0>]}
+[0m18:39:28.003945 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:39:28.006332 [info ] [MainThread]: 
+[0m18:39:28.013803 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:39:28.016456 [info ] [Thread-1 (]: 1 of 1 START sql incremental model RAW_staging.stg_globeplay_chargeback_report . [RUN]
+[0m18:39:28.019585 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globeplay_chargeback_report)
+[0m18:39:28.022922 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globeplay_chargeback_report
+[0m18:39:28.042113 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:28.053543 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globeplay_chargeback_report
+[0m18:39:28.092434 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:28.094817 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+create or replace  temporary view DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp
+  
+   as (
+    
+
+SELECT 
+    external_ref,
+    status,
+    source,
+    chargeback
+FROM DEEL_PROJECT_DB.raw.raw_globepay_chargeback_report
+
+
+WHERE external_ref NOT IN (SELECT external_ref FROM DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report)
+
+  );
+[0m18:39:28.096766 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:39:29.029081 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.932 seconds
+[0m18:39:29.046669 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:29.049624 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+describe table DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp
+[0m18:39:29.179064 [debug] [Thread-1 (]: SQL status: SUCCESS 4 in 0.127 seconds
+[0m18:39:29.188649 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:29.191245 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+describe table DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report
+[0m18:39:29.327871 [debug] [Thread-1 (]: SQL status: SUCCESS 4 in 0.133 seconds
+[0m18:39:29.343058 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:29.345980 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+describe table "DEEL_PROJECT_DB"."RAW_STAGING"."STG_GLOBEPLAY_CHARGEBACK_REPORT"
+[0m18:39:29.473315 [debug] [Thread-1 (]: SQL status: SUCCESS 4 in 0.125 seconds
+[0m18:39:29.509635 [debug] [Thread-1 (]: Writing runtime sql for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:29.531751 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:29.533620 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+-- back compat for old kwarg name
+  
+  begin;
+[0m18:39:29.676997 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.142 seconds
+[0m18:39:29.678679 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:29.680366 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+merge into DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report as DBT_INTERNAL_DEST
+        using DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp as DBT_INTERNAL_SOURCE
+        on (
+                DBT_INTERNAL_SOURCE.external_ref = DBT_INTERNAL_DEST.external_ref
+            )
+
+    
+    when matched then update set
+        "EXTERNAL_REF" = DBT_INTERNAL_SOURCE."EXTERNAL_REF","STATUS" = DBT_INTERNAL_SOURCE."STATUS","SOURCE" = DBT_INTERNAL_SOURCE."SOURCE","CHARGEBACK" = DBT_INTERNAL_SOURCE."CHARGEBACK"
+    
+
+    when not matched then insert
+        ("EXTERNAL_REF", "STATUS", "SOURCE", "CHARGEBACK")
+    values
+        ("EXTERNAL_REF", "STATUS", "SOURCE", "CHARGEBACK")
+
+;
+[0m18:39:30.361216 [debug] [Thread-1 (]: SQL status: SUCCESS 0 in 0.679 seconds
+[0m18:39:30.375075 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:30.378492 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+COMMIT
+[0m18:39:30.645254 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.264 seconds
+[0m18:39:30.661939 [debug] [Thread-1 (]: Applying DROP to: DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp
+[0m18:39:30.670884 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:39:30.673131 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+drop view if exists DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp cascade
+[0m18:39:30.830372 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.155 seconds
+[0m18:39:30.859742 [debug] [Thread-1 (]: On model.deel_project.stg_globeplay_chargeback_report: Close
+[0m18:39:31.074579 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '54cc372c-d30a-49ef-8406-c597b1243641', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90baaab520>]}
+[0m18:39:31.078247 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model RAW_staging.stg_globeplay_chargeback_report  [[32mSUCCESS 0[0m in 3.05s]
+[0m18:39:31.081806 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:39:31.086562 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:39:31.088229 [debug] [MainThread]: Connection 'list_DEEL_PROJECT_DB' was properly closed.
+[0m18:39:31.089920 [debug] [MainThread]: Connection 'model.deel_project.stg_globeplay_chargeback_report' was properly closed.
+[0m18:39:31.091622 [info ] [MainThread]: 
+[0m18:39:31.094473 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 5.43 seconds (5.43s).
+[0m18:39:31.097079 [debug] [MainThread]: Command end result
+[0m18:39:31.163727 [info ] [MainThread]: 
+[0m18:39:31.165836 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:39:31.167811 [info ] [MainThread]: 
+[0m18:39:31.169099 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:39:31.172573 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 21.48292, "process_user_time": 2.945484, "process_kernel_time": 0.829878, "process_mem_max_rss": "124952", "process_in_blocks": "22496", "process_out_blocks": "8"}
+[0m18:39:31.174165 [debug] [MainThread]: Command `dbt run` succeeded at 18:39:31.174035 after 21.48 seconds
+[0m18:39:31.175176 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90be73f3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bb707af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f90bd0a1de0>]}
+[0m18:39:31.176261 [debug] [MainThread]: Flushing usage events
+[0m18:43:07.857565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e298533d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e29be3370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e29be1a50>]}
+
+
+============================== 18:43:07.868450 | 4e6c3ae9-e980-4482-a23c-3b1d90228c9a ==============================
+[0m18:43:07.868450 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:43:07.870033 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt compile', 'send_anonymous_usage_stats': 'True'}
+[0m18:43:25.507131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e29258d30>]}
+[0m18:43:25.566061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e269ff700>]}
+[0m18:43:25.583495 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:43:25.652993 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:43:25.789943 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m18:43:25.792076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e28ba4970>]}
+[0m18:43:30.216640 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m18:43:30.218632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e267ae470>]}
+[0m18:43:30.450723 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.deel_project.intermediate
+[0m18:43:30.460663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e263f4fd0>]}
+[0m18:43:30.799312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e263d3700>]}
+[0m18:43:30.800441 [info ] [MainThread]: Found 1 model, 2 data tests, 1 source, 454 macros
+[0m18:43:30.801804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e263f6f80>]}
+[0m18:43:30.804157 [info ] [MainThread]: 
+[0m18:43:30.805557 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:43:30.806979 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:43:30.822026 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:43:30.827560 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:43:30.833895 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:43:32.122100 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.288 seconds
+[0m18:43:32.126321 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:43:32.343134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4e6c3ae9-e980-4482-a23c-3b1d90228c9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e26466500>]}
+[0m18:43:32.346534 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:43:32.349143 [info ] [MainThread]: 
+[0m18:43:32.367432 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:43:32.370139 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globeplay_chargeback_report)
+[0m18:43:32.372413 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globeplay_chargeback_report
+[0m18:43:32.383905 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m18:43:32.394884 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globeplay_chargeback_report
+[0m18:43:32.396467 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globeplay_chargeback_report
+[0m18:43:32.398213 [debug] [Thread-3 (]: Began running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:43:32.398644 [debug] [Thread-4 (]: Began running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:43:32.399683 [debug] [Thread-3 (]: Acquiring new snowflake connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc'
+[0m18:43:32.401075 [debug] [Thread-4 (]: Acquiring new snowflake connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888'
+[0m18:43:32.402212 [debug] [Thread-3 (]: Began compiling node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:43:32.403301 [debug] [Thread-4 (]: Began compiling node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:43:32.413844 [debug] [Thread-3 (]: Writing injected SQL for node "test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc"
+[0m18:43:32.419535 [debug] [Thread-4 (]: Writing injected SQL for node "test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888"
+[0m18:43:32.426944 [debug] [Thread-3 (]: Began executing node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:43:32.428428 [debug] [Thread-3 (]: Finished running node test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc
+[0m18:43:32.428809 [debug] [Thread-4 (]: Began executing node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:43:32.431161 [debug] [Thread-4 (]: Finished running node test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888
+[0m18:43:32.433491 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:43:32.434793 [debug] [MainThread]: Connection 'model.deel_project.stg_globeplay_chargeback_report' was properly closed.
+[0m18:43:32.435946 [debug] [MainThread]: Connection 'test.deel_project.not_null_stg_globeplay_chargeback_report_external_ref.b99b59a2fc' was properly closed.
+[0m18:43:32.436998 [debug] [MainThread]: Connection 'test.deel_project.unique_stg_globeplay_chargeback_report_external_ref.fcee331888' was properly closed.
+[0m18:43:32.438289 [debug] [MainThread]: Command end result
+[0m18:43:32.490176 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 21.775257, "process_user_time": 3.901207, "process_kernel_time": 0.983406, "process_mem_max_rss": "129208", "process_in_blocks": "42744", "process_out_blocks": "8"}
+[0m18:43:32.491940 [debug] [MainThread]: Command `dbt compile` succeeded at 18:43:32.491759 after 21.78 seconds
+[0m18:43:32.493327 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e298533d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e296692d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5e289d6650>]}
+[0m18:43:32.495184 [debug] [MainThread]: Flushing usage events
+[0m18:47:47.584873 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce90c533d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce90f2b280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce90f2bf70>]}
+
+
+============================== 18:47:47.596163 | 55c741b1-b1e0-49af-93ba-0f6ade4fccb1 ==============================
+[0m18:47:47.596163 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:47:47.597511 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select stg_globepay_acceptance_report', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:47:58.027504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8de5c940>]}
+[0m18:47:58.077728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8de2f7f0>]}
+[0m18:47:58.091420 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:47:58.122520 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:48:00.563751 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 1 files changed.
+[0m18:48:00.565432 [debug] [MainThread]: Partial parsing: added file: deel_project://deel_project/models/staging/stg_globepay_acceptance_report.sql
+[0m18:48:00.567085 [debug] [MainThread]: Partial parsing: updated file: deel_project://deel_project/models/staging/schema.yml
+[0m18:48:00.811624 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m18:48:00.813669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8d9ec5e0>]}
+[0m18:48:01.051162 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.deel_project.intermediate
+[0m18:48:01.061643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8d654130>]}
+[0m18:48:01.395814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8daf9c90>]}
+[0m18:48:01.397309 [info ] [MainThread]: Found 2 models, 4 data tests, 2 sources, 454 macros
+[0m18:48:01.399031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8dafb7f0>]}
+[0m18:48:01.401273 [info ] [MainThread]: 
+[0m18:48:01.402671 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:48:01.404616 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB'
+[0m18:48:01.417687 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB"
+[0m18:48:01.419367 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB"} */
+show terse schemas in database DEEL_PROJECT_DB
+    limit 10000
+[0m18:48:01.420544 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:48:02.488054 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.067 seconds
+[0m18:48:02.492143 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: Close
+[0m18:48:02.717174 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB, now list_DEEL_PROJECT_DB_RAW_staging)
+[0m18:48:02.729366 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:48:02.731536 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:48:02.733268 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:48:03.563567 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.830 seconds
+[0m18:48:03.568309 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:48:03.792137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8d8e54b0>]}
+[0m18:48:03.795428 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:48:03.797934 [info ] [MainThread]: 
+[0m18:48:03.807102 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globepay_acceptance_report
+[0m18:48:03.810415 [info ] [Thread-1 (]: 1 of 1 START sql incremental model RAW_staging.stg_globepay_acceptance_report .. [RUN]
+[0m18:48:03.812959 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globepay_acceptance_report)
+[0m18:48:03.815072 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globepay_acceptance_report
+[0m18:48:03.828591 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globepay_acceptance_report"
+[0m18:48:03.942441 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globepay_acceptance_report
+[0m18:48:04.005566 [debug] [Thread-1 (]: Writing runtime sql for node "model.deel_project.stg_globepay_acceptance_report"
+[0m18:48:04.018037 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globepay_acceptance_report"
+[0m18:48:04.019239 [debug] [Thread-1 (]: On model.deel_project.stg_globepay_acceptance_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globepay_acceptance_report"} */
+create or replace transient table DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
+         as
+        (
+
+SELECT
+    external_ref,
+    status,
+    source,
+    ref,
+    date_time,
+    state,
+    cvv_provided,
+    amount,
+    country,
+    currency,
+    rates
+FROM DEEL_PROJECT_DB.raw.raw_globepay_acceptance_report
+
+
+        );
+[0m18:48:04.020243 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:48:05.284358 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.264 seconds
+[0m18:48:05.301257 [debug] [Thread-1 (]: Applying DROP to: DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report__dbt_tmp
+[0m18:48:05.311369 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globepay_acceptance_report"
+[0m18:48:05.314254 [debug] [Thread-1 (]: On model.deel_project.stg_globepay_acceptance_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globepay_acceptance_report"} */
+drop view if exists DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report__dbt_tmp cascade
+[0m18:48:05.432216 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.115 seconds
+[0m18:48:05.459855 [debug] [Thread-1 (]: On model.deel_project.stg_globepay_acceptance_report: Close
+[0m18:48:05.703912 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '55c741b1-b1e0-49af-93ba-0f6ade4fccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8de1e830>]}
+[0m18:48:05.707491 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model RAW_staging.stg_globepay_acceptance_report  [[32mSUCCESS 1[0m in 1.89s]
+[0m18:48:05.710885 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globepay_acceptance_report
+[0m18:48:05.716308 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:48:05.718195 [debug] [MainThread]: Connection 'model.deel_project.stg_globepay_acceptance_report' was properly closed.
+[0m18:48:05.719970 [info ] [MainThread]: 
+[0m18:48:05.721711 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 4.32 seconds (4.32s).
+[0m18:48:05.724423 [debug] [MainThread]: Command end result
+[0m18:48:05.792120 [info ] [MainThread]: 
+[0m18:48:05.793421 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:48:05.794319 [info ] [MainThread]: 
+[0m18:48:05.795386 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:48:05.798015 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 15.338066, "process_user_time": 3.004437, "process_kernel_time": 0.726347, "process_mem_max_rss": "131584", "process_in_blocks": "29280", "process_out_blocks": "8"}
+[0m18:48:05.799197 [debug] [MainThread]: Command `dbt run` succeeded at 18:48:05.799072 after 15.34 seconds
+[0m18:48:05.800016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce90c533d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8fddd630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fce8de2f7f0>]}
+[0m18:48:05.800870 [debug] [MainThread]: Flushing usage events
+[0m18:48:19.325013 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5eea3490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5e883df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5f233ee0>]}
+
+
+============================== 18:48:19.333563 | f0c0c0af-1842-4cb9-86e7-25948e6bfe75 ==============================
+[0m18:48:19.333563 [info ] [MainThread]: Running with dbt=1.8.8
+[0m18:48:19.334836 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt test --select stg_globepay_acceptance_report', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:48:25.542913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f0c0c0af-1842-4cb9-86e7-25948e6bfe75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5c020af0>]}
+[0m18:48:25.590247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f0c0c0af-1842-4cb9-86e7-25948e6bfe75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5d3dea10>]}
+[0m18:48:25.603938 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m18:48:25.637340 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m18:48:31.609459 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:48:31.610517 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:48:31.615692 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.deel_project.intermediate
+[0m18:48:31.656678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f0c0c0af-1842-4cb9-86e7-25948e6bfe75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5bb6d150>]}
+[0m18:48:32.151692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f0c0c0af-1842-4cb9-86e7-25948e6bfe75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5d3df430>]}
+[0m18:48:32.152743 [info ] [MainThread]: Found 2 models, 4 data tests, 2 sources, 454 macros
+[0m18:48:32.153835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f0c0c0af-1842-4cb9-86e7-25948e6bfe75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5bd3e950>]}
+[0m18:48:32.155447 [info ] [MainThread]: 
+[0m18:48:32.156627 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m18:48:32.161759 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB_RAW_staging'
+[0m18:48:32.177612 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m18:48:32.180343 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m18:48:32.182464 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:48:33.123151 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.941 seconds
+[0m18:48:33.126908 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m18:48:33.357174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f0c0c0af-1842-4cb9-86e7-25948e6bfe75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5d3dff70>]}
+[0m18:48:33.360590 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:48:33.363608 [info ] [MainThread]: 
+[0m18:48:33.371619 [debug] [Thread-1 (]: Began running node test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be
+[0m18:48:33.372355 [debug] [Thread-2 (]: Began running node test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3
+[0m18:48:33.375499 [info ] [Thread-1 (]: 1 of 2 START test not_null_stg_globepay_acceptance_report_external_ref ......... [RUN]
+[0m18:48:33.378511 [info ] [Thread-2 (]: 2 of 2 START test unique_stg_globepay_acceptance_report_external_ref ........... [RUN]
+[0m18:48:33.380780 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be)
+[0m18:48:33.382733 [debug] [Thread-2 (]: Acquiring new snowflake connection 'test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3'
+[0m18:48:33.384251 [debug] [Thread-1 (]: Began compiling node test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be
+[0m18:48:33.385798 [debug] [Thread-2 (]: Began compiling node test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3
+[0m18:48:33.420713 [debug] [Thread-1 (]: Writing injected SQL for node "test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be"
+[0m18:48:33.423616 [debug] [Thread-2 (]: Writing injected SQL for node "test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3"
+[0m18:48:33.449328 [debug] [Thread-1 (]: Began executing node test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be
+[0m18:48:33.459020 [debug] [Thread-2 (]: Began executing node test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3
+[0m18:48:33.486527 [debug] [Thread-1 (]: Writing runtime sql for node "test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be"
+[0m18:48:33.490460 [debug] [Thread-2 (]: Writing runtime sql for node "test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3"
+[0m18:48:33.521585 [debug] [Thread-2 (]: Using snowflake connection "test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3"
+[0m18:48:33.524117 [debug] [Thread-2 (]: On test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+select
+    external_ref as unique_field,
+    count(*) as n_records
+
+from DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
+where external_ref is not null
+group by external_ref
+having count(*) > 1
+
+
+
+      
+    ) dbt_internal_test
+[0m18:48:33.526006 [debug] [Thread-1 (]: Using snowflake connection "test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be"
+[0m18:48:33.527425 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:48:33.529639 [debug] [Thread-1 (]: On test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select external_ref
+from DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
+where external_ref is null
+
+
+
+      
+    ) dbt_internal_test
+[0m18:48:33.535025 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:48:34.286868 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.759 seconds
+[0m18:48:34.402713 [debug] [Thread-2 (]: On test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3: Close
+[0m18:48:34.443462 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.908 seconds
+[0m18:48:34.449706 [debug] [Thread-1 (]: On test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be: Close
+[0m18:48:34.607191 [info ] [Thread-2 (]: 2 of 2 PASS unique_stg_globepay_acceptance_report_external_ref ................. [[32mPASS[0m in 1.22s]
+[0m18:48:34.610829 [debug] [Thread-2 (]: Finished running node test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3
+[0m18:48:34.682863 [info ] [Thread-1 (]: 1 of 2 PASS not_null_stg_globepay_acceptance_report_external_ref ............... [[32mPASS[0m in 1.30s]
+[0m18:48:34.686658 [debug] [Thread-1 (]: Finished running node test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be
+[0m18:48:34.692127 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:48:34.694814 [debug] [MainThread]: Connection 'test.deel_project.not_null_stg_globepay_acceptance_report_external_ref.0dc37e75be' was properly closed.
+[0m18:48:34.697282 [debug] [MainThread]: Connection 'test.deel_project.unique_stg_globepay_acceptance_report_external_ref.ebb99a2ac3' was properly closed.
+[0m18:48:34.699944 [info ] [MainThread]: 
+[0m18:48:34.702749 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 2.54 seconds (2.54s).
+[0m18:48:34.705695 [debug] [MainThread]: Command end result
+[0m18:48:34.794778 [info ] [MainThread]: 
+[0m18:48:34.796132 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:48:34.797247 [info ] [MainThread]: 
+[0m18:48:34.798295 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m18:48:34.801110 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 12.6024275, "process_user_time": 2.569397, "process_kernel_time": 0.783493, "process_mem_max_rss": "127600", "process_in_blocks": "22696", "process_out_blocks": "8"}
+[0m18:48:34.802391 [debug] [MainThread]: Command `dbt test` succeeded at 18:48:34.802271 after 12.60 seconds
+[0m18:48:34.803420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5eea3490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5d823e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faf5e026770>]}
+[0m18:48:34.804447 [debug] [MainThread]: Flushing usage events

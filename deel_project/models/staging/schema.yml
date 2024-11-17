@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Source data for the raw schema.
+    tables:
+      - name: raw_globepay_chargeback_report
+        description: Raw chargeback data from GlobePay.
+      - name: raw_globepay_acceptance_report
+        description: Raw acceptance data from GlobePay.
+
+models:
+  - name: stg_globeplay_chargeback_report
+    description: Staging model for GlobePlay chargeback data.
+    columns:
+      - name: external_ref
+        description: Unique reference for each chargeback.
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: The status of the chargeback.
+      - name: source
+        description: The source of the chargeback data.
+      - name: chargeback
+        description: The chargeback amount.
+
+  - name: stg_globepay_acceptance_report
+    description: Staging model for GlobePay acceptance data.
+    columns:
+      - name: external_ref
+        description: Unique reference for each acceptance record.
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: The status of the acceptance record.
+      - name: source
+        description: The source of the acceptance data.
+      - name: ref
+        description: A reference field for linking related data.
+      - name: date_time
+        description: The timestamp for the acceptance event.
+      - name: state
+        description: The state associated with the acceptance record.
+      - name: cvv_provided
+        description: Indicates if the CVV was provided (boolean).
+      - name: amount
+        description: The transaction amount.
+      - name: country
+        description: The country of the transaction.
+      - name: currency
+        description: The currency used for the transaction.
+      - name: rates
+        description: Exchange rates for different currencies.
