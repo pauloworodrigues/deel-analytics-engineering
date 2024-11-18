@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: fct_transactions
+    description: >
+      This fact table contains enriched transactional data, combining parsed rates,
+      chargeback information, and country names. It serves as the primary dataset
+      for transactional analysis, supporting use cases such as acceptance rates,
+      declined transaction analysis, and chargeback investigations.
+    columns:
+      - name: external_ref
+        description: "Unique external reference for the transaction."
+      - name: status
+        description: >
+          Status of the transaction (e.g., ACCEPTED, DECLINED).
+      - name: source
+        description: >
+          Source of the transaction data (e.g., GLOBALPAY).
+      - name: ref
+        description: "Unique identifier for the transaction reference."
+      - name: timestamp
+        description: "Exact timestamp of the transaction."
+      - name: date
+        description: "Date of the transaction, extracted from the timestamp."
+      - name: state
+        description: >
+          State of the transaction process (e.g., COMPLETED, PENDING).
+      - name: cvv_provided
+        description: "Indicates if the CVV was provided (TRUE/FALSE)."
+      - name: amount
+        description: >
+          The monetary amount of the transaction in the original currency.
+      - name: country
+        description: "The country abbreviation where the transaction originated."
+      - name: country_name
+        description: "The full name of the country, sourced from the `countries` seed."
+      - name: currency
+        description: "The currency abbreviation used in the transaction."
+      - name: rate_usd
+        description: "Exchange rate for USD, parsed from the `RATES` JSON."
+      - name: rate_eur
+        description: "Exchange rate for EUR, parsed from the `RATES` JSON."
+      - name: rate_cad
+        description: "Exchange rate for CAD, parsed from the `RATES` JSON."
+      - name: rate_gbp
+        description: "Exchange rate for GBP, parsed from the `RATES` JSON."
+      - name: rate_mxn
+        description: "Exchange rate for MXN, parsed from the `RATES` JSON."
+      - name: rate_sgd
+        description: "Exchange rate for SGD, parsed from the `RATES` JSON."
+      - name: rate_aud
+        description: "Exchange rate for AUD, parsed from the `RATES` JSON."
+      - name: chargeback
+        description: >
+          Boolean indicating whether the transaction has an associated chargeback,
+          sourced from `stg_globepay_chargeback_report`.
+      - name: is_missing_chargeback
+        description: >
+          Flag indicating whether chargeback data is missing for the transaction.
