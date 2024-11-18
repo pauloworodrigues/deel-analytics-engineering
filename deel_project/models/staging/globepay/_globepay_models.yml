@@ -36,6 +36,9 @@ models:
         description: Indicates if the CVV was provided (boolean).
       - name: amount
         description: The transaction amount.
+        tests:
+          - validate_amount:
+              column_name: amount  
       - name: country
         description: The country of the transaction.
       - name: currency

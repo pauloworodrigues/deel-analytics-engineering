@@ -2,7 +2,7 @@
   
     
 
-        create or replace transient table DEEL_PROJECT_DB.RAW.fct_globepay_transactions
+        create or replace transient table DEEL_PROJECT_DB.RAW_analytics.fct_globepay_transactions
          as
         (
 

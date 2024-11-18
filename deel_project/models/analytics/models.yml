@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fct_transactions
+  - name: fct_globepay_transactions
     description: >
       This fact table contains enriched transactional data, combining parsed rates,
       chargeback information, and country names. It serves as the primary dataset

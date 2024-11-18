@@ -17,10 +17,14 @@ clean-targets:
 models:
   deel_project:
     staging:
-      +schema: staging
-      +materialized: incremental
+      globepay:
+        +schema: staging
+        +materialized: incremental
     intermediate:
       +schema: intermediate
+      +materialized: table
+    analytics:
+      +schema: analytics
       +materialized: table
 
 seeds:
