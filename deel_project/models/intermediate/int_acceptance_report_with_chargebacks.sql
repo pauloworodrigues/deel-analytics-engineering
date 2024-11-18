@@ -1,8 +1,8 @@
--- depends_on: DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
--- depends_on: DEEL_PROJECT_DB.RAW_seeds.countries
--- depends_on: DEEL_PROJECT_DB.RAW_staging.stg_globepay_chargeback_report
+-- depends_on: {{ ref('stg_globepay_acceptance_report') }}
+-- depends_on: {{ ref('countries') }}
+-- depends_on: {{ ref('stg_globepay_chargeback_report') }}
 
-
+{{ config(materialized="table") }}
 
 WITH base_data AS (
     SELECT
@@ -17,7 +17,7 @@ WITH base_data AS (
         COUNTRY,
         CURRENCY,
         PARSE_JSON(RATES) AS rates_json
-    FROM DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
+    FROM {{ ref('stg_globepay_acceptance_report') }}
 ),
 parsed_rates AS (
     SELECT
@@ -31,13 +31,7 @@ parsed_rates AS (
         AMOUNT,
         COUNTRY,
         CURRENCY,
-        rates_json:USD::FLOAT AS rate_usd,
-  rates_json:EUR::FLOAT AS rate_eur,
-  rates_json:CAD::FLOAT AS rate_cad,
-  rates_json:GBP::FLOAT AS rate_gbp,
-  rates_json:MXN::FLOAT AS rate_mxn,
-  rates_json:SGD::FLOAT AS rate_sgd,
-  rates_json:AUD::FLOAT AS rate_aud
+        {{ parse_json_simple('rates_json', 'rate_', ['USD', 'EUR', 'CAD', 'GBP', 'MXN', 'SGD', 'AUD']) }}
     FROM base_data
 ),
 enriched_data AS (
@@ -45,7 +39,7 @@ enriched_data AS (
         parsed_rates.*,
         countries.name AS country_name
     FROM parsed_rates
-    LEFT JOIN DEEL_PROJECT_DB.RAW_seeds.countries AS countries
+    LEFT JOIN {{ ref('countries') }} AS countries
     ON parsed_rates.country = countries.abbreviation
 ),
 final_data AS (
@@ -71,7 +65,7 @@ final_data AS (
         a.rate_aud,
         c.chargeback
     FROM enriched_data AS a
-    LEFT JOIN DEEL_PROJECT_DB.RAW_staging.stg_globepay_chargeback_report AS c
+    LEFT JOIN {{ ref('stg_globepay_chargeback_report') }} AS c
     ON a.external_ref = c.external_ref
 )
 SELECT *

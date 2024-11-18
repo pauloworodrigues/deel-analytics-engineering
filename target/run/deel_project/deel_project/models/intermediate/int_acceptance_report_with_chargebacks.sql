@@ -1,4 +1,10 @@
--- depends_on: DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
+
+  
+    
+
+        create or replace transient table DEEL_PROJECT_DB.RAW_intermediate.int_acceptance_report_with_chargebacks
+         as
+        (-- depends_on: DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
 -- depends_on: DEEL_PROJECT_DB.RAW_seeds.countries
 -- depends_on: DEEL_PROJECT_DB.RAW_staging.stg_globepay_chargeback_report
 
@@ -76,3 +82,6 @@ final_data AS (
 )
 SELECT *
 FROM final_data
+        );
+      
+  

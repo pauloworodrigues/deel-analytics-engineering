@@ -22,3 +22,8 @@ models:
     intermediate:
       +schema: intermediate
       +materialized: table
+
+seeds:
+  deel_project:
+    +schema: seeds
+    +quote_columns: false

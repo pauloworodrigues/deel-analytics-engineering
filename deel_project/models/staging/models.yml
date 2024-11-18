@@ -1,5 +1,5 @@
 models:
-  - name: stg_globeplay_chargeback_report
+  - name: stg_globepay_chargeback_report
     description: Staging model for GlobePlay chargeback data.
     columns:
       - name: external_ref
