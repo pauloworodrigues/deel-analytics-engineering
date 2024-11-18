@@ -1,14 +1,3 @@
-version: 2
-
-sources:
-  - name: raw
-    description: Source data for the raw schema.
-    tables:
-      - name: raw_globepay_chargeback_report
-        description: Raw chargeback data from GlobePay.
-      - name: raw_globepay_acceptance_report
-        description: Raw acceptance data from GlobePay.
-
 models:
   - name: stg_globeplay_chargeback_report
     description: Staging model for GlobePlay chargeback data.

@@ -1,0 +1,136 @@
+[0m00:21:46.011346 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d751eb3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d754c3370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d754c1b70>]}
+
+
+============================== 00:21:46.025329 | 082d094f-658c-41eb-9377-57d9f34759b8 ==============================
+[0m00:21:46.025329 [info ] [MainThread]: Running with dbt=1.8.8
+[0m00:21:46.027164 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/prodrigues/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/mnt/c/Users/pwor_/OneDrive/Documentos/GitHub/deel-analytics-engineering/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:21:53.160351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d74c08d30>]}
+[0m00:21:53.213431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d723f7700>]}
+[0m00:21:53.237705 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m00:21:53.317499 [debug] [MainThread]: checksum: ec53e341a936509427e16df1c646386a84befec52c1957e3f4359fbc36fc93f5, vars: {}, profile: , target: , version: 1.8.8
+[0m00:21:56.228377 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:21:56.229471 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:21:56.235454 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.deel_project.intermediate
+[0m00:21:56.274151 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d71f15060>]}
+[0m00:21:56.626794 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d7212d270>]}
+[0m00:21:56.627942 [info ] [MainThread]: Found 2 models, 4 data tests, 2 sources, 454 macros
+[0m00:21:56.629309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d7212c100>]}
+[0m00:21:56.631326 [info ] [MainThread]: 
+[0m00:21:56.632520 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m00:21:56.637334 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEEL_PROJECT_DB'
+[0m00:21:56.654263 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB"
+[0m00:21:56.655945 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB"} */
+show terse schemas in database DEEL_PROJECT_DB
+    limit 10000
+[0m00:21:56.657034 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:21:57.822207 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.165 seconds
+[0m00:21:57.825818 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB: Close
+[0m00:21:58.047279 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB, now create_DEEL_PROJECT_DB_RAW_staging)
+[0m00:21:58.054335 [debug] [ThreadPool]: Creating schema "database: "DEEL_PROJECT_DB"
+schema: "RAW_staging"
+"
+[0m00:21:58.060286 [debug] [ThreadPool]: Using snowflake connection "create_DEEL_PROJECT_DB_RAW_staging"
+[0m00:21:58.063555 [debug] [ThreadPool]: On create_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "create_DEEL_PROJECT_DB_RAW_staging"} */
+create schema if not exists DEEL_PROJECT_DB.RAW_staging
+[0m00:21:58.069240 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:21:58.927687 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.858 seconds
+[0m00:21:58.961371 [debug] [ThreadPool]: On create_DEEL_PROJECT_DB_RAW_staging: Close
+[0m00:21:59.265784 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_DEEL_PROJECT_DB_RAW_staging, now list_DEEL_PROJECT_DB_RAW_staging)
+[0m00:21:59.279287 [debug] [ThreadPool]: Using snowflake connection "list_DEEL_PROJECT_DB_RAW_staging"
+[0m00:21:59.282694 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "connection_name": "list_DEEL_PROJECT_DB_RAW_staging"} */
+show objects in DEEL_PROJECT_DB.RAW_staging limit 10000
+[0m00:21:59.285749 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:21:59.994931 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.709 seconds
+[0m00:21:59.999722 [debug] [ThreadPool]: On list_DEEL_PROJECT_DB_RAW_staging: Close
+[0m00:22:00.211725 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d71547a30>]}
+[0m00:22:00.215722 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m00:22:00.220064 [info ] [MainThread]: 
+[0m00:22:00.230582 [debug] [Thread-1 (]: Began running node model.deel_project.stg_globepay_acceptance_report
+[0m00:22:00.231077 [debug] [Thread-2 (]: Began running node model.deel_project.stg_globeplay_chargeback_report
+[0m00:22:00.232372 [info ] [Thread-1 (]: 1 of 2 START sql incremental model RAW_staging.stg_globepay_acceptance_report .. [RUN]
+[0m00:22:00.234719 [info ] [Thread-2 (]: 2 of 2 START sql incremental model RAW_staging.stg_globeplay_chargeback_report . [RUN]
+[0m00:22:00.242083 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_DEEL_PROJECT_DB_RAW_staging, now model.deel_project.stg_globepay_acceptance_report)
+[0m00:22:00.244816 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.deel_project.stg_globeplay_chargeback_report'
+[0m00:22:00.246912 [debug] [Thread-1 (]: Began compiling node model.deel_project.stg_globepay_acceptance_report
+[0m00:22:00.250782 [debug] [Thread-2 (]: Began compiling node model.deel_project.stg_globeplay_chargeback_report
+[0m00:22:00.267612 [debug] [Thread-1 (]: Writing injected SQL for node "model.deel_project.stg_globepay_acceptance_report"
+[0m00:22:00.272130 [debug] [Thread-2 (]: Writing injected SQL for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m00:22:00.283660 [debug] [Thread-2 (]: Began executing node model.deel_project.stg_globeplay_chargeback_report
+[0m00:22:00.291164 [debug] [Thread-1 (]: Began executing node model.deel_project.stg_globepay_acceptance_report
+[0m00:22:00.348850 [debug] [Thread-2 (]: Writing runtime sql for node "model.deel_project.stg_globeplay_chargeback_report"
+[0m00:22:00.351323 [debug] [Thread-1 (]: Writing runtime sql for node "model.deel_project.stg_globepay_acceptance_report"
+[0m00:22:00.358980 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globepay_acceptance_report"
+[0m00:22:00.360079 [debug] [Thread-1 (]: On model.deel_project.stg_globepay_acceptance_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globepay_acceptance_report"} */
+create or replace transient table DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report
+         as
+        (
+
+SELECT
+    external_ref,
+    status,
+    source,
+    ref,
+    date_time,
+    state,
+    cvv_provided,
+    amount,
+    country,
+    currency,
+    rates
+FROM DEEL_PROJECT_DB.raw.raw_globepay_acceptance_report
+
+
+        );
+[0m00:22:00.360662 [debug] [Thread-2 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m00:22:00.361711 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:22:00.362995 [debug] [Thread-2 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+create or replace transient table DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report
+         as
+        (
+
+SELECT 
+    external_ref,
+    status,
+    source,
+    chargeback
+FROM DEEL_PROJECT_DB.raw.raw_globepay_chargeback_report
+
+
+        );
+[0m00:22:00.366107 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m00:22:01.747333 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.381 seconds
+[0m00:22:01.758042 [debug] [Thread-2 (]: Applying DROP to: DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp
+[0m00:22:01.765150 [debug] [Thread-2 (]: Using snowflake connection "model.deel_project.stg_globeplay_chargeback_report"
+[0m00:22:01.767123 [debug] [Thread-2 (]: On model.deel_project.stg_globeplay_chargeback_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globeplay_chargeback_report"} */
+drop view if exists DEEL_PROJECT_DB.RAW_staging.stg_globeplay_chargeback_report__dbt_tmp cascade
+[0m00:22:01.845917 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.484 seconds
+[0m00:22:01.850549 [debug] [Thread-1 (]: Applying DROP to: DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report__dbt_tmp
+[0m00:22:01.852977 [debug] [Thread-1 (]: Using snowflake connection "model.deel_project.stg_globepay_acceptance_report"
+[0m00:22:01.857118 [debug] [Thread-1 (]: On model.deel_project.stg_globepay_acceptance_report: /* {"app": "dbt", "dbt_version": "1.8.8", "profile_name": "deel_project", "target_name": "dev", "node_id": "model.deel_project.stg_globepay_acceptance_report"} */
+drop view if exists DEEL_PROJECT_DB.RAW_staging.stg_globepay_acceptance_report__dbt_tmp cascade
+[0m00:22:01.885521 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.117 seconds
+[0m00:22:01.903019 [debug] [Thread-2 (]: On model.deel_project.stg_globeplay_chargeback_report: Close
+[0m00:22:01.986405 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.126 seconds
+[0m00:22:01.990201 [debug] [Thread-1 (]: On model.deel_project.stg_globepay_acceptance_report: Close
+[0m00:22:02.133873 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d73d939a0>]}
+[0m00:22:02.135865 [info ] [Thread-2 (]: 2 of 2 OK created sql incremental model RAW_staging.stg_globeplay_chargeback_report  [[32mSUCCESS 1[0m in 1.89s]
+[0m00:22:02.137670 [debug] [Thread-2 (]: Finished running node model.deel_project.stg_globeplay_chargeback_report
+[0m00:22:02.199913 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '082d094f-658c-41eb-9377-57d9f34759b8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d71fcf6d0>]}
+[0m00:22:02.203304 [info ] [Thread-1 (]: 1 of 2 OK created sql incremental model RAW_staging.stg_globepay_acceptance_report  [[32mSUCCESS 1[0m in 1.96s]
+[0m00:22:02.205660 [debug] [Thread-1 (]: Finished running node model.deel_project.stg_globepay_acceptance_report
+[0m00:22:02.214976 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:22:02.220594 [debug] [MainThread]: Connection 'model.deel_project.stg_globepay_acceptance_report' was properly closed.
+[0m00:22:02.225722 [debug] [MainThread]: Connection 'model.deel_project.stg_globeplay_chargeback_report' was properly closed.
+[0m00:22:02.230491 [info ] [MainThread]: 
+[0m00:22:02.233633 [info ] [MainThread]: Finished running 2 incremental models in 0 hours 0 minutes and 5.60 seconds (5.60s).
+[0m00:22:02.236476 [debug] [MainThread]: Command end result
+[0m00:22:02.332838 [info ] [MainThread]: 
+[0m00:22:02.335785 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:22:02.338118 [info ] [MainThread]: 
+[0m00:22:02.339712 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m00:22:02.348247 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 16.399376, "process_user_time": 2.819561, "process_kernel_time": 0.75672, "process_mem_max_rss": "126388", "process_in_blocks": "28752", "process_out_blocks": "8"}
+[0m00:22:02.351070 [debug] [MainThread]: Command `dbt run` succeeded at 00:22:02.350740 after 16.40 seconds
+[0m00:22:02.353403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d751eb3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d73a6e9b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4d73b45de0>]}
+[0m00:22:02.355279 [debug] [MainThread]: Flushing usage events

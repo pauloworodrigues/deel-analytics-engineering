@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: int_test
+    description: "Intermediate model for testing, selecting data from the stg_globeplay_chargeback_report model."
+    columns:
+      - name: chargeback_id
+        description: "Unique identifier for each chargeback."
+      - name: provider_id
+        description: "Unique identifier for the provider associated with the chargeback."
+      - name: chargeback_reason
+        description: "Reason provided for the chargeback."
+      - name: chargeback_amount
+        description: "The monetary amount associated with the chargeback."
